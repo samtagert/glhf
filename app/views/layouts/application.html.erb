@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>glhf</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to 'Game Index', games_path %>
+    <%= link_to 'Game Show', game_path(Game.first) %>
+    <%= link_to 'Edit User', edit_user_path(User.first) %>
+    <%= link_to 'New User', new_user_path %>
+    <%= link_to 'Show User', user_path(User.first) %>
+    <%= yield %>
+  </body>
+</html>
