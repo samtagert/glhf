@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'games#index'
   resources :games, only: [:index, :show]
   resources :users, except: [:index, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]  
 end

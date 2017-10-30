@@ -1,10 +1,11 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.all 
+    @games = Game.all
+    @users = User.all
   end
 
   def show
-    @game = Game.find(1)        
+    @game = Game.find(params[:id])
   end
 
   private
