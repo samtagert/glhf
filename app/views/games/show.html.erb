@@ -1,1 +1,23 @@
-<%= @game.name %>'s page
+<p><%= @game.name %>'s page</p>
+<p><%= @game.name %>'s reviews</p>
+
+<%= form_for [@game, @review] do |f| %>
+  <div class="field">
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>
+
+
+
+<div>
+  <% @game.reviews.each do |review| %>
+    <p><%= review.rating %> &nbsp;|&nbsp;<%= link_to review.user.user_name, user_path(review.user) %></p>
+    <p><%= review.content %> <%= link_to 'X', review_path(review), method: 'delete', class: 'btn btn-danger btn-sm' if review.user == current_user %></p>
+  <% end %>
+</div>

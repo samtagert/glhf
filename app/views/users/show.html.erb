@@ -1,1 +1,8 @@
-<%= @user.first_name %>'s profile
+<p><%= @user.first_name %>'s profile</p>
+<p><%= @user.first_name %>'s reviews</p>
+
+<% @user.reviews.each do |review| %>
+<li>
+<%= review.rating %> &nbsp;|&nbsp; <%= review.content %>
+</li>
+<% end %>

@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
   has_many :reviews
-  has_many :tags, through: :tagging
+  has_many :taggings
+  has_many :tags, through: :taggings
 end

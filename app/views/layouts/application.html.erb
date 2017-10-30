@@ -3,28 +3,32 @@
   <head>
     <title>glhf</title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= link_to 'Game Index', games_path %>
-
-<p>
-  <% if current_user %>
-    Hello, <%= current_user.first_name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Edit Profile', edit_user_path(current_user) %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Log Out', session_path('d'), method: :delete %>
-  <% else %>
-    <%= link_to 'Log In', new_session_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-</p>
-
-    <%= yield %>
+  <nav>
+  </nav>
+  <section>
+  <div class="container">
+      <%= link_to 'Game Index', games_path %>
+      <p>
+        <% if current_user %>
+          Hello, <%= current_user.first_name %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Log Out', session_path('d'), method: :delete %>
+        <% else %>
+          <%= link_to 'Log In', new_session_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Sign Up', new_user_path %>
+        <% end %>
+      </p>
+      <%= yield %>
+  </div>
+  </section>
   </body>
 </html>

@@ -1,3 +1,4 @@
 class Tag < ApplicationRecord
-  has_many :games, through: :tagging  
+  has_many :taggings
+  has_many :games, through: :taggings
 end
