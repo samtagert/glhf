@@ -1,8 +1,9 @@
-<p><%= @user.first_name %>'s profile</p>
-<p><%= @user.first_name %>'s reviews</p>
+<h2 class="white-text"><%= @user.first_name %>'s profile</h2>
 
+
+<p><%= @user.first_name %>'s reviews</p>
 <% @user.reviews.each do |review| %>
 <li>
-<%= review.rating %> &nbsp;|&nbsp; <%= review.content %>
+<%= link_to review.game.name, game_path(review.game) %>&nbsp;|&nbsp;<%= review.rating %>
 </li>
 <% end %>

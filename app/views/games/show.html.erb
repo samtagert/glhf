@@ -1,5 +1,7 @@
-<p><%= @game.name %>'s page</p>
-<p><%= @game.name %>'s reviews</p>
+<h4 ><%= @game.name %></h4>
+<div class="video-container">
+<iframe width="854" height="480" src="https://www.youtube.com/embed/wGQHQc_3ycE" frameborder="0" gesture="media" allowfullscreen></iframe>
+</div>
 
 <%= form_for [@game, @review] do |f| %>
   <div class="field">
@@ -10,14 +12,25 @@
     <%= f.label :content %>
     <%= f.text_field :content %>
   </div>
-  <div class="actions"><%= f.submit %></div>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Create Review
+    <i class="material-icons right">send</i>
+  </button>
 <% end %>
 
-
-
-<div>
+<h4><%= @game.name %>'s reviews</h4>
+<div class="row">
   <% @game.reviews.each do |review| %>
-    <p><%= review.rating %> &nbsp;|&nbsp;<%= link_to review.user.user_name, user_path(review.user) %></p>
-    <p><%= review.content %> <%= link_to 'X', review_path(review), method: 'delete', class: 'btn btn-danger btn-sm' if review.user == current_user %></p>
+    <div class="col s12 m12">
+      <div class="card blue-grey darken-2">
+        <div class="card-content">
+          <span class="card-title"><%= review.rating %></span>
+          <p><%= review.content %></p>
+        </div>
+        <div class="card-action">
+          Reviewed by: &nbsp;<%= link_to review.user.user_name, user_path(review.user) %>
+          <%= link_to 'Delete', review_path(review), method: 'delete', class: 'right' if review.user == current_user %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
