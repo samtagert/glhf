@@ -1,12 +1,15 @@
-<h4 ><%= @game.name %></h4>
+<h4 ><%= @game.name %>&nbsp;|&nbsp;<%= @game.review_avg %></h4>
 <div class="video-container">
-<iframe width="854" height="480" src="https://www.youtube.com/embed/wGQHQc_3ycE" frameborder="0" gesture="media" allowfullscreen></iframe>
+<iframe width="854" height="480" src=<%= @game.trailer %> frameborder="0" gesture="media" allowfullscreen></iframe>
 </div>
 
+<h5>Write a Review</h5>
 <%= form_for [@game, @review] do |f| %>
   <div class="field">
     <%= f.label :rating %>
-    <%= f.text_field :rating %>
+    <p class="range-field">
+      <%= range_field :review, :rating, in: 1..100, min: "0", max: "100" %>
+    </p>
   </div>
   <div class="field">
     <%= f.label :content %>

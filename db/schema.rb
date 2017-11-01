@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171027213312) do
+ActiveRecord::Schema.define(version: 20171031172338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,16 +18,15 @@ ActiveRecord::Schema.define(version: 20171027213312) do
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.date "release_date"
-    t.string "platform"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "trailer"
+    t.string "image"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "content"
-    t.integer "thumbs_up"
-    t.integer "thumbs_down"
     t.bigint "user_id"
     t.bigint "game_id"
     t.datetime "created_at", null: false
@@ -59,6 +58,7 @@ ActiveRecord::Schema.define(version: 20171027213312) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "favorite_game"
   end
 
   add_foreign_key "reviews", "games"

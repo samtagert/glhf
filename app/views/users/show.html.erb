@@ -1,9 +1,10 @@
+<img src=<%= @game.image %>>
 <h2 class="white-text"><%= @user.first_name %>'s profile</h2>
-
-
-<p><%= @user.first_name %>'s reviews</p>
+<p>User Name:&nbsp;<%= @user.user_name %></p>
+<p>Real Name:&nbsp;<%= @user.first_name %>&nbsp;<%= @user.last_name %></p>
+<p>Favorite Game:&nbsp;<%= @user.favorite_game %></p>
+<p>Location:&nbsp;<%= @user.location %></p>
+<h4><%= @user.first_name %>'s reviews</h4>
 <% @user.reviews.each do |review| %>
-<li>
-<%= link_to review.game.name, game_path(review.game) %>&nbsp;|&nbsp;<%= review.rating %>
-</li>
+<p><%= link_to review.game.name, game_path(review.game) %>&nbsp;|&nbsp;<%= review.rating %></p>
 <% end %>

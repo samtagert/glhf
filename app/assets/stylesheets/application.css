@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.left {
+  font-size: 32px;
+}
+
+.game-image {
+  height: 150px;
+}

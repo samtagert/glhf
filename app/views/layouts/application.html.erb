@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </head>
   <body class="grey darken-3">
   <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper blue-grey darken-2">
       <div class="container">
-      <%= link_to 'gl hf', games_path, class: 'brand-logo left' %>
+      <%= link_to 'gl hf', games_path, class: 'left' %>
       <ul class="right">
       <% if current_user %>
           <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>

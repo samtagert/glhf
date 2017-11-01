@@ -1,8 +1,8 @@
-<h1>Edit Profile</h1>
+<h2>Edit Profile</h2>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
-      <h2>Form is invalid</h2>
+      <h3>Form is invalid</h3>
       <ul>
         <% for message in @user.errors.full_messages %>
           <li><%= message %></li>
@@ -22,6 +22,30 @@
     <%= f.label :user_name %>
     <%= f.text_field :user_name %>
   </div>
+  <div class="input-field col s12">
+    <select name="user[favorite_game]">
+      <option value="" disabled selected>Choose your favorite</option>
+      <option value="Super Mario Odyssey">Super Mario Odyssey</option>
+      <option value="Dark Souls 3">Dark Souls 3</option>
+      <option value="Overwatch">Overwatch</option>
+      <option value="Shovel Knight">Shovel Knight</option>
+      <option value="Devil May Cry 4">Devil May Cry 4</option>
+      <option value="The Legend of Zelda">The Legend of Zelda</option>
+      <option value="Persona 5">Persona 5</option>
+      <option value="Metroid Prime">Metroid Prime</option>
+      <option value="Mark of the Ninja">Mark of the Ninja</option>
+      <option value="Bioshock">Bioshock</option>
+      <option value="The Witcher 3">The Witcher 3</option>
+      <option value="Star Fox 64">Star Fox 64</option>
+      <option value="Doom">Doom</option>
+      <option value="Hearthstone">Hearthstone</option>
+      <option value="Halo 2">Halo 2</option>
+      <option value="Final Fantasy VII">Final Fantasy VII</option>
+      <option value="Mario Kart 8">Mario Kart 8</option>
+      <option value="Ninja Gaiden">Ninja Gaiden</option>
+    </select>
+    <label>Favorite Game</label>
+  </div>
   <div class="field">
     <%= f.label :location %>
     <%= f.text_field :location %>
@@ -38,3 +62,9 @@
     <i class="material-icons right">send</i>
   </button>
 <% end %>
+
+<script>
+$(document).ready(function() {
+    $('select').material_select();
+  });
+</script>

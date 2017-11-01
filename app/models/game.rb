@@ -9,9 +9,9 @@ class Game < ApplicationRecord
       @avg += review.rating
     end
     if self.reviews.count > 0
-    @avg / self.reviews.count
+      @avg / self.reviews.count
     else
-      @avg = 'N/A'
+      "N/A"
     end
   end
 end

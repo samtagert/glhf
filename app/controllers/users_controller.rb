@@ -18,22 +18,23 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-
+  
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to root_path
+      redirect_to user_path(params[:id])
     else
       render :edit
     end
   end
-
+  
   def show
     @user = User.find(params[:id])
+    @game = Game.find_by(:name == @user.favorite_game)
   end
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :user_name, :location, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :user_name, :location, :password, :password_confirmation, :favorite_game)
   end
 end

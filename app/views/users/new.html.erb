@@ -1,8 +1,8 @@
-<h1>Sign Up</h1>
+<h2>Sign Up</h2>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
-      <h2>Form is invalid</h2>
+      <h3>Form is invalid</h3>
       <ul>
         <% for message in @user.errors.full_messages %>
           <li><%= message %></li>
@@ -21,6 +21,10 @@
   <div class="field">
     <%= f.label :user_name %>
     <%= f.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :favorite_game %>
+    <%= f.text_field :favorite_game %>
   </div>
   <div class="field">
     <%= f.label :location %>
