@@ -1,6 +1,9 @@
 # GLHF
 [Good luck, Have fun](https://glhf.herokuapp.com) is a website for reviewing and viewing video games.
 
+[Website Preview](https://i.imgur.com/OSIlCVT.png)
+[Website Preview](https://i.imgur.com/O9Eo8TH.png)
+
 ## Built With
 GLHF was written using Ruby On Rails, HTML, CSS, and a hint of JavaScript. The planning was done using [Trello](https://trello.com/b/4JgmANng/wdi-project-2).
 
