@@ -11,38 +11,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </head>
   <body class="grey darken-3">
-  <div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper blue-grey darken-2">
-      <div class="container">
-      <%= link_to 'gl hf', games_path, class: 'left' %>
-      <ul class="right">
-      <% if current_user %>
-        <ul id="dropdown1" class="dropdown-content">
-          <li><%= link_to 'Show Profile', user_path(current_user) %></li>
-          <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
-          <li class="divider"></li>
-          <li><%= link_to 'Log Out', session_path('d'), method: :delete %></li>
-        </ul>
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.first_name %>&nbsp;<%= current_user.last_name %><i class="material-icons right">arrow_drop_down</i></a></li>
-          <li><img src=<%= avatar %> class="avatar"></li>
-        <% else %>
-          <li><%= link_to 'Log In', new_session_path %></li>
-          <li><%= link_to 'Sign Up', new_user_path %></li>
-        <% end %>
-      </ul>
-      </div>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper blue-grey darken-2">
+          <div class="container">
+            <%= link_to 'gl hf', games_path, class: 'left' %>
+            <ul class="right">
+              <% if current_user %>
+              <ul id="dropdown1" class="dropdown-content">
+                <li><%= link_to 'Show Profile', user_path(current_user) %></li>
+                <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Log Out', session_path('d'), method: :delete %></li>
+              </ul>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.first_name %>&nbsp;<%= current_user.last_name %><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><img src=<%= avatar %> class="avatar"></li>
+              <% else %>
+                <li><%= link_to 'Log In', new_session_path %></li>
+                <li><%= link_to 'Sign Up', new_user_path %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-  </nav>
-  </div>
-  <section>
-  <div class="container white-text">
-      <%= yield %>
-  </div>
-  </section>
+    <section>
+      <div class="container white-text">
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>
 
 <script>
-$(".dropdown-button").dropdown();
+  $(".dropdown-button").dropdown();
 </script>

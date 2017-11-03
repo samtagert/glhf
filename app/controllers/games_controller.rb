@@ -7,8 +7,9 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @review = Review.new
   end
+  
   private
-  def game_params
-    params.require(:game).permit(:name, :image, :trailer)
-  end
+    def game_params
+      params.require(:game).permit(:name, :image, :trailer)
+    end
 end

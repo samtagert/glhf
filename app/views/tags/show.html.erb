@@ -1,7 +1,7 @@
-<p>Games with the <%= @tag.keyword %> tag
+<p>Games with the <%= @tag.keyword %> tag</p>
 <ul id="dropdown2" class="dropdown-content">
   <% Tag.all.each do |tag| %>
-  <li><%= link_to(tag.keyword, tag_path(tag)) %></li>
+    <li><%= link_to(tag.keyword, tag_path(tag)) %></li>
   <% end %>
 </ul>
 <a class="dropdown-button white-text" href="#" data-activates="dropdown2">Filter by tag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
@@ -13,7 +13,7 @@
           <img src=<%= game.image %>>
         </div>
         <div class="card-action blue-grey darken-2">
-        <%= link_to(game.name, game_path(game)) %><span class="right"><%= game.review_avg %></span>
+          <%= link_to(game.name, game_path(game)) %><span class="right"><%= game.review_avg %></span>
         </div>
       </div>
     </div>

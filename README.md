@@ -1,25 +1,8 @@
-# README
+# GLHF
+[Good luck, Have fun](https://glhf.herokuapp.com) is a website for reviewing and viewing video games.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
+GLHF was written using Ruby On Rails, HTML, CSS, and a hint of JavaScript. The planning was done using [Trello](https://trello.com/b/4JgmANng/wdi-project-2).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# glhf
+## Next Steps
+My plans for this website primarily include more sorting options for the games and reviews. Sorting by release date, rating, favorites, and a combined search field allowing you to choose multiple sorting options and returning just the games that include all of the options you choose.
