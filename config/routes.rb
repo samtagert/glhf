@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   resources :users, except: [:index, :destroy]
   resources :sessions, only: [:new, :create, :destroy]  
+  resources :tags, only: [:show]
 end

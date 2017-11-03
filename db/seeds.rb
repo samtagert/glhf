@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Review.destroy_all
+Tagging.destroy_all
+Tag.destroy_all
 Game.destroy_all
 
 games = Game.create([
@@ -29,3 +31,42 @@ games = Game.create([
   {name: "Mario Kart 8", release_date: 20150519, image: "https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/wiiu_14/SI_WiiU_MarioKart8.jpg", trailer: "https://www.youtube.com/embed/mU7tXqYplA8"},
   {name: "Ninja Gaiden", release_date: 20150519, image: "http://wallpaper.pickywallpapers.com/2560x1440/ninja-gaiden.jpg", trailer: "https://www.youtube.com/embed/EDquy4cXSTg"}
 ])
+
+tags = Tag.create([
+  {keyword: "campaign"},
+  {keyword: "multiplayer"},
+  {keyword: "rpg"},
+  {keyword: "fps"},
+  {keyword: "indie"},
+  {keyword: "nintendo"},
+  {keyword: "xbox"},
+  {keyword: "playstation"},
+  {keyword: "pc"},
+  {keyword: "mature"},
+  {keyword: "family"}
+])
+
+@campaign = Tag.find_by(keyword: "campaign")
+@multiplayer = Tag.find_by(keyword: "multiplayer")
+@rpg = Tag.find_by(keyword: "rpg")
+@fps = Tag.find_by(keyword: "fps")
+@indie = Tag.find_by(keyword: "indie")
+@nintendo = Tag.find_by(keyword: "nintendo")
+@xbox = Tag.find_by(keyword: "xbox")
+@playstation = Tag.find_by(keyword: "playstation")
+@pc = Tag.find_by(keyword: "pc")
+@mature = Tag.find_by(keyword: "mature")
+@family = Tag.find_by(keyword: "family")
+
+Game.find_by(name: "Super Mario Odyssey").tags << @campaign << @nintendo << @family
+Game.find_by(name: "Dark Souls 3").tags << @campaign << @multiplayer << @rpg << @xbox << @playstation << @pc << @mature
+Game.find_by(name: "Overwatch").tags << @multiplayer << @fps << @xbox << @playstation << @pc
+Game.find_by(name: "Shovel Knight").tags << @campaign << @indie << @nintendo << @pc << @family
+Game.find_by(name: "Devil May Cry 4").tags << @campaign << @xbox << @playstation << @pc << @mature
+Game.find_by(name: "The Legend of Zelda").tags << @campaign << @nintendo << @family
+Game.find_by(name: "Persona 5").tags << @campaign << @rpg << @playstation
+Game.find_by(name: "Metroid Prime").tags << @campaign << @fps << @nintendo
+Game.find_by(name: "Mark of the Ninja").tags << @campaign << @indie << @pc << @mature
+Game.find_by(name: "Bioshock").tags << @campaign << @xbox << @playstation << @pc << @mature
+Game.find_by(name: "The Witcher 3").tags << @campaign << @rpg << @xbox << @playstation << @pc << @mature
+Game.find_by(name: "Star Fox 64").tags << @campaign << @nintendo << @family

@@ -18,6 +18,19 @@
   font-size: 32px;
 }
 
+.avatar {
+  width: 100px;
+  height: 52px;
+  position: relative;
+  top: 7px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
 .game-image {
   height: 150px;
+}
+
+.collection {
+  border: 0;
 }

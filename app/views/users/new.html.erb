@@ -10,35 +10,61 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+  <div class="input-field col s6">
+    <input id="first_name" type="text" name="user[first_name]">
+    <label for="first_name">First Name</label>
   </div>
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+  <div class="input-field col s6">
+    <input id="last_name" type="text" name="user[last_name]">
+    <label for="last_name">Last Name</label>
   </div>
-  <div class="field">
-    <%= f.label :user_name %>
-    <%= f.text_field :user_name %>
+  <div class="input-field col s6">
+    <input id="user_name" type="text" name="user[user_name]">
+    <label for="user_name">User Name</label>
   </div>
-  <div class="field">
-    <%= f.label :favorite_game %>
-    <%= f.text_field :favorite_game %>
+  <div class="input-field col s6">
+    <input id="location" type="text" name="user[location]">
+    <label for="location">Location</label>
   </div>
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
+  <div class="input-field col s12">
+    <select name="user[favorite_game]">
+      <option value="" disabled selected>Choose your favorite</option>
+      <option value="Super Mario Odyssey">Super Mario Odyssey</option>
+      <option value="Dark Souls 3">Dark Souls 3</option>
+      <option value="Overwatch">Overwatch</option>
+      <option value="Shovel Knight">Shovel Knight</option>
+      <option value="Devil May Cry 4">Devil May Cry 4</option>
+      <option value="The Legend of Zelda">The Legend of Zelda</option>
+      <option value="Persona 5">Persona 5</option>
+      <option value="Metroid Prime">Metroid Prime</option>
+      <option value="Mark of the Ninja">Mark of the Ninja</option>
+      <option value="Bioshock">Bioshock</option>
+      <option value="The Witcher 3">The Witcher 3</option>
+      <option value="Star Fox 64">Star Fox 64</option>
+      <option value="Doom">Doom</option>
+      <option value="Hearthstone">Hearthstone</option>
+      <option value="Halo 2">Halo 2</option>
+      <option value="Final Fantasy VII">Final Fantasy VII</option>
+      <option value="Mario Kart 8">Mario Kart 8</option>
+      <option value="Ninja Gaiden">Ninja Gaiden</option>
+    </select>
+    <label>Favorite Game</label>
   </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="input-field col s6">
+    <input id="password" type="password" class="validate" name="user[password]">
+    <label for="password">Password</label>
   </div>
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+  <div class="input-field col s6">
+    <input id="password_confirmation" type="password" class="validate" name="user[password_confirmation]">
+    <label for="password_confirmation">Password Confirmation</label>
   </div>
-  <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up
+  <button class="btn waves-effect waves-light" type="submit" name="action">Create Profile
     <i class="material-icons right">send</i>
   </button>
 <% end %>
+
+<script>
+$(document).ready(function() {
+    $('select').material_select();
+  });
+</script>

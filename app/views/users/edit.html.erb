@@ -22,6 +22,10 @@
     <%= f.label :user_name %>
     <%= f.text_field :user_name %>
   </div>
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
   <div class="input-field col s12">
     <select name="user[favorite_game]">
       <option value="" disabled selected>Choose your favorite</option>
@@ -47,10 +51,6 @@
     <label>Favorite Game</label>
   </div>
   <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
@@ -62,7 +62,6 @@
     <i class="material-icons right">send</i>
   </button>
 <% end %>
-
 <script>
 $(document).ready(function() {
     $('select').material_select();

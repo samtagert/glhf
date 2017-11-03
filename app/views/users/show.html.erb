@@ -1,10 +1,38 @@
-<img src=<%= @game.image %>>
-<h2 class="white-text"><%= @user.first_name %>'s profile</h2>
-<p>User Name:&nbsp;<%= @user.user_name %></p>
-<p>Real Name:&nbsp;<%= @user.first_name %>&nbsp;<%= @user.last_name %></p>
-<p>Favorite Game:&nbsp;<%= @user.favorite_game %></p>
-<p>Location:&nbsp;<%= @user.location %></p>
+<div class="row">
+  <div class="col s12 m12">
+    <div class="card blue-gray darken-2">
+      <div class="card-image">
+        <img src=<%= @avatar %> class="profile">
+      </div>
+      <div class="card-action blue-grey darken-2">
+        <h2><%= @user.first_name %>'s Profile</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ul class="collection z-depth-1">
+  <li class="collection-item blue-grey darken-2">User Name:&nbsp;<%= @user.user_name %></li>
+  <li class="collection-item blue-grey darken-2">Real Name:&nbsp;<%= @user.first_name %>&nbsp;<%= @user.last_name %></li>
+  <li class="collection-item blue-grey darken-2">Location:&nbsp;<%= @user.location %></li>
+  <li class="collection-item blue-grey darken-2">Favorite Game:&nbsp;<%= @user.favorite_game %></li>
+</ul>
+
 <h4><%= @user.first_name %>'s reviews</h4>
+<div class="row">
 <% @user.reviews.each do |review| %>
-<p><%= link_to review.game.name, game_path(review.game) %>&nbsp;|&nbsp;<%= review.rating %></p>
-<% end %>
+    <div class="col s12 m12">
+      <div class="card blue-grey darken-2">
+        <div class="card-content">
+          <span class="card-title"><%= review.rating %></span>
+          <p><%= review.content %></p>
+        </div>
+        <div class="card-action">
+          Review for: &nbsp;<%= link_to review.game.name, game_path(review.game) %>
+          <%= link_to 'Delete', review_path(review), method: 'delete', class: 'right' if review.user == current_user %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

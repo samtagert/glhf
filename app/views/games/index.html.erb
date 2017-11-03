@@ -1,9 +1,11 @@
-<form>
-  <div class="input-field">
-    <input id="search" type="search" required>
-    <label class="label-icon" for="search"><i class="material-icons prefix">search</i></label>
-  </div>
-</form>
+<p>
+<ul id="dropdown2" class="dropdown-content">
+  <% Tag.all.each do |tag| %>
+  <li><%= link_to(tag.keyword, tag_path(tag)) %></li>
+  <% end %>
+</ul>
+</p>
+<a class="dropdown-button white-text" href="#!" data-activates="dropdown2">Filter by tag &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 <div class="row">
   <% @games.each do |game| %>
     <div class="col s12 m4">

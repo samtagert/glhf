@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @game = Game.find_by(:name == @user.favorite_game)
+    @avatar = Game.find_by(name: @user.favorite_game).image
   end
 
   private
